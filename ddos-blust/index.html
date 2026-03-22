@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Block Blast – Browser Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <div class="logo">
+          <span class="logo-main">Block Blast</span>
+          <span class="logo-sub">Browser Edition</span>
+        </div>
+        <div class="score-panel">
+          <div class="score-label">Score</div>
+          <div id="score" class="score-value">0</div>
+        </div>
+        <button id="reset-btn" class="primary-btn">New Game</button>
+      </header>
+
+      <main class="layout">
+        <section class="board-section">
+          <div id="board" class="board"></div>
+        </section>
+        <section class="side-section">
+          <div class="next-title">Next Pieces</div>
+          <div id="pieces-container" class="pieces-container"></div>
+          <div id="game-over" class="game-over hidden">
+            <div class="game-over-title">Game Over</div>
+            <div class="game-over-score">
+              Final score: <span id="final-score">0</span>
+            </div>
+            <button id="play-again-btn" class="primary-btn">Play Again</button>
+          </div>
+          <div class="help">
+            <h2>How to play</h2>
+            <ul>
+              <li>Click a piece, then click a free spot on the board.</li>
+              <li>Pieces cannot overlap or go outside the grid.</li>
+              <li>Fill an entire row or column to clear it and earn points.</li>
+              <li>After you place all 3 pieces, a new set appears.</li>
+              <li>If no piece fits anywhere, the game is over.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+

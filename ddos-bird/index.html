@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Flappy Bird Web</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="game-wrap">
+    <canvas id="gameCanvas" aria-label="Flappy Bird"></canvas>
+
+    <section class="hud">
+      <div class="hud__item">Очки: <span id="score">0</span></div>
+      <div class="hud__item">Время: <span id="time">02:00</span></div>
+    </section>
+
+    <section id="overlay" class="overlay">
+      <h1>Flappy Bird</h1>
+      <p>Нажми на экран, чтобы лететь вверх</p>
+      <button id="startBtn" type="button">Начать игру</button>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>DDoS Ninja</title>
+    <link rel="stylesheet" href="./style.css" />
+    
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      window.GAME_USER_ID = urlParams.get('user_id') || 'unknown';
+      window.GAME_NAME = urlParams.get('game') || 'ddos_ninja';
+      
+      // ⚠️ ВАЖНО: При локальном тесте оставь localhost:5000
+      // При запуске через ngrok замени на твой HTTPS URL из ngrok
+      // Например: window.BOT_API_URL = 'https://abc123.ngrok.io';
+      window.BOT_API_URL = 'http://localhost:5000';
+      
+      console.log('🎮 Game started:', {
+        user: window.GAME_USER_ID,
+        game: window.GAME_NAME,
+        api: window.BOT_API_URL
+      });
+    </script>
+  </head>
+  <body>
+    <div class="game-shell">
+      <header class="hud">
+        <div class="hud-left">
+          <img id="logo" src="./assets/logo.png" alt="Game logo" />
+        </div>
+        <div class="hud-right">
+          <div class="timer-wrap">
+            <span class="label">Время</span>
+            <span id="timeValue">02:00</span>
+          </div>
+          <div id="livesContainer" class="lives" aria-label="Жизни"></div>
+        </div>
+      </header>
+
+      <main class="arena">
+        <canvas id="gameCanvas"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <h1 id="resultTitle">Игра окончена</h1>
+          <p id="resultText">Ваш счет: 0</p>
+          <button id="restartBtn" type="button">Играть снова</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
